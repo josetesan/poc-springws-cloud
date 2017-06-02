@@ -1,0 +1,13 @@
+server:
+    port: 8080
+spring:
+  application:
+        name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/josetesan/poc-config.git
+          clone-on-start: true
+
+
