@@ -12,12 +12,31 @@
 	<description>POC for ING about Spring boot, Spring Cloud and Docker</description>
 
 	<scm>
-		<connection>scm:git:git@github.com:appfuse/appfuse-demos.git</connection>
-		<developerConnection>scm:git:git@github.com:appfuse/appfuse-demos.git</developerConnection>
-		<url>https://github.com/appfuse/appfuse-demos</url>
+		<connection>scm:git:git@github.com:josetesan/apoc-springws-cloud.git</connection>
+		<developerConnection>scm:git:git@github.com:josetesan/poc-springws-cloud</developerConnection>
+		<url>https://github.com/josetesan/poc-springws-cloud</url>
 	</scm>
 
-	<modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+    </parent>
+
+
+    <prerequisites>
+        <maven>3.3</maven>
+    </prerequisites>
+
+    <properties>
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-cloud.version>Dalston.SR1</spring-cloud.version>
+    </properties>
+
+
+    <modules>
 		<module>admin</module>
 		<module>configserver</module>
 		<module>frontend</module>
