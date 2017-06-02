@@ -1,0 +1,48 @@
+version: '2'
+services:
+  frontend:
+    build: frontend/.
+    ports:
+     - "8080:8080"
+     
+  zuul:
+    build: zuul/.
+    ports:
+      - "80:8080"
+    
+  admin:
+    build: admin/.
+    ports:
+      - "8090:8080"
+ 
+  
+  configserver:
+    build: configserver/.
+    ports:
+      - "8888:8888"
+  
+  soapclient:
+    build: soapclient/.
+    ports: 
+      - "5050:5050"
+  
+  soapserver:
+    build: soapserver/.
+    ports:
+      - "9090:9090"
+
+  database:
+     image: postgres:9.6-alpine
+     ports:  
+       - "5432:5432"
+     environment:
+       - POSTGRES_PASSWORD=mysecretpassword
+  
+  zipkin:
+     image: openzipkin/zipkin:1.26.0
+     ports:
+       - "9411:9411"    
+    
+    
+    
+    
