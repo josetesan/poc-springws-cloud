@@ -1,35 +1,40 @@
-version: '2'
+version: '2.1'
 services:
-  frontend:
-    build: frontend/.
-    ports:
-     - "8080:8080"
-     
-  zuul:
-    build: zuul/.
-    ports:
-      - "80:8080"
-    
-  admin:
-    build: admin/.
-    ports:
-      - "8090:8080"
- 
-  
+
   configserver:
     build: configserver/.
     ports:
       - "8888:8888"
-  
+
+
+  frontend:
+    build: frontend/.
+    ports:
+     - "8080:8080"
+    depends_on:
+      - configserver
+
+  zuul:
+    build: zuul/.
+    ports:
+      - "80:8080"
+    depends_on:
+      - configserver
+    
   soapclient:
     build: soapclient/.
     ports: 
-      - "5050:5050"
+      - "5050:8080"
+    depends_on:
+      - configserver
   
   soapserver:
     build: soapserver/.
     ports:
-      - "9090:9090"
+      - "9090:8080"
+    depends_on:
+      - configserver
+      - database
 
   database:
      image: postgres:9.6-alpine
@@ -42,7 +47,9 @@ services:
      image: openzipkin/zipkin:1.26.0
      ports:
        - "9411:9411"    
-    
-    
-    
-    
+
+
+  admin:
+    build: admin/.
+    ports:
+      - "10060:8080"
