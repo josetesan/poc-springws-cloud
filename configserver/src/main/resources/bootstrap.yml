@@ -1,11 +1,17 @@
-server:
-    port: 8080
 spring:
   application:
         name: configserver
+  boot:
+    admin:
+       url: http://admin:10060
   cloud:
     config:
       server:
         git:
           uri: https://github.com/josetesan/poc-config.git
           clone-on-start: true
+
+management:
+    security:
+        enabled: false
+
