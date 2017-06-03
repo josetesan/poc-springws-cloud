@@ -3,3 +3,6 @@ server:
 spring:
     application:
         name: soapclient
+    cloud:
+        config:
+          uri: http://configserver:8080

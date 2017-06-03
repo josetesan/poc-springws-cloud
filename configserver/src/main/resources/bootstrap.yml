@@ -10,6 +10,12 @@ spring:
         git:
           uri: https://github.com/josetesan/poc-config.git
           clone-on-start: true
+  zipkin:
+    baseUrl: http://zipkin:9411/
+    enabled: true
+  sleuth:
+    sampler:
+      percentage: 0.2
 
 management:
     security:

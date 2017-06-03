@@ -37,27 +37,12 @@ services:
       - zipkin
       - admin
 
-  soapserver:
-    build: soapserver/.
-    ports:
-      - "9090:8080"
-    links:
-      - configserver
-      - database
-      - zipkin
-      - admin
 
   admin:
     build: admin/.
     ports:
       - "10060:10060"
 
-  database:
-     image: postgres:9.6-alpine
-     ports:
-       - "5432:5432"
-     environment:
-       - POSTGRES_PASSWORD=mysecretpassword
 
   zipkin:
      image: openzipkin/zipkin:1.26.0

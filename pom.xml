@@ -42,7 +42,6 @@
 		<module>configserver</module>
 		<module>frontend</module>
 		<module>soapclient</module>
-		<module>soapserver</module>
 		<module>zuul</module>
 	</modules>
 
