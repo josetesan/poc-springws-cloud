@@ -9,5 +9,3 @@ spring:
         git:
           uri: https://github.com/josetesan/poc-config.git
           clone-on-start: true
-
-
