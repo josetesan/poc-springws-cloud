@@ -30,7 +30,7 @@ services:
 
   soapclient:
     build: soapclient/.
-    ports: 
+    ports:
       - "5050:8080"
     links:
       - configserver
@@ -50,19 +50,16 @@ services:
   admin:
     build: admin/.
     ports:
-      - "10060:8080"
+      - "10060:10060"
 
   database:
      image: postgres:9.6-alpine
-     ports:  
+     ports:
        - "5432:5432"
      environment:
        - POSTGRES_PASSWORD=mysecretpassword
-  
+
   zipkin:
      image: openzipkin/zipkin:1.26.0
      ports:
-       - "9411:9411"    
-
-
-
+       - "9411:9411"
