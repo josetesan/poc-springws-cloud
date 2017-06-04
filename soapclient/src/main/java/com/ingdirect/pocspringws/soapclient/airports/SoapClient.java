@@ -1,7 +1,7 @@
 package com.ingdirect.pocspringws.soapclient.airports;
 
-import airport.wsdl.GetAirportInformationByAirportCode;
-import airport.wsdl.GetAirportInformationByAirportCodeResponse;
+import com.webservicex.wsdl.airport.GetAirportInformationByAirportCode;
+import com.webservicex.wsdl.airport.GetAirportInformationByAirportCodeResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -29,5 +29,8 @@ public class SoapClient extends WebServiceGatewaySupport {
         return response;
 
     }
+
+
+
 
 }

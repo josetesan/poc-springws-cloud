@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Find information about airports</title>
+</head>
+<body>
+
+<form action="#" data-th-action="@{/airportSearch}" data-th-object="${airport}" method="post">
+
+    <select data-th-field="*{code}">
+        <option data-th-each="airport : ${airports}"
+                data-th-value="${airport.code}"
+                data-th-text="${airport.name}">Wireframe</option>
+    </select>
+    <input type="submit" value="Find!" />
+
+</form>
+
+</body>
+</html>

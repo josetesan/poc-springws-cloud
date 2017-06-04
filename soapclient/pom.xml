@@ -49,6 +49,12 @@
 			<version>${boot-admin.version}</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
@@ -57,6 +63,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.xmlbeam</groupId>
+            <artifactId>xmlprojector</artifactId>
+            <version>1.4.11</version>
         </dependency>
 	</dependencies>
 
@@ -99,7 +112,7 @@
                 </executions>
                 <configuration>
                     <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>airport.wsdl</generatePackage>
+                    <generatePackage>com.webservicex.wsdl.airport</generatePackage>
                     <schemas>
                         <schema>
                             <url>http://www.webservicex.com/airport.asmx?WSDL</url>

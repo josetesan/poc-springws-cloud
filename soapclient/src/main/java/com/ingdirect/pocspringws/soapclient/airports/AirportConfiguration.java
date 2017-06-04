@@ -27,7 +27,7 @@ public class AirportConfiguration {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         // this package must match the package in the <generatePackage> specified in
         // pom.xml
-        marshaller.setContextPath("airport.wsdl");
+        marshaller.setContextPath("com.webservicex.wsdl.airport");
         return marshaller;
     }
 
